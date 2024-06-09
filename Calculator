@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+        // Create a new instance of Calculator
+        Calculator myCalculator = new Calculator();
+
+        // Initialize scanner for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter two numbers
+        System.out.println("Welcome to Interactive Calculator!");
+        System.out.println("Please enter the first number:");
+        int num1 = scanner.nextInt();
+        System.out.println("Please enter the second number:");
+        int num2 = scanner.nextInt();
+
+        // Calculate and print the sum
+        int sum = myCalculator.add(num1, num2);
+        System.out.println("Sum: " + sum);
+
+        // Calculate and print the difference
+        int difference = myCalculator.subtract(num1, num2);
+        System.out.println("Difference: " + difference);
+
+        // Close the scanner to avoid resource leak
+        scanner.close();
+    }
+
+    // Constructor
+    public Calculator() {
+        // Default constructor, no initialization needed
+    }
+
+    // Method to add two numbers
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method to subtract two numbers
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+
+    // Method to multiply two numbers
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+
+    // Method to divide two numbers
+    public int divide(int a, int b) {
+        // Check if denominator is zero to avoid division by zero error
+        if (b == 0) {
+            System.out.println("Error: Division by zero!");
+            return 0; // Return 0 as an error indicator
+        }
+        return a / b;
+    }
+
+    // Method to find the modulo of two numbers
+    public int modulo(int a, int b) {
+        // Check if denominator is zero to avoid division by zero error
+        if (b == 0) {
+            System.out.println("Error: Modulo by zero!");
+            return 0; // Return 0 as an error indicator
+        }
+        return a % b;
+    }
+}
